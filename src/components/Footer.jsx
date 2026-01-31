@@ -26,7 +26,7 @@ const Footer = () => {
 
                 <div className={styles.bottom}>
                     <p>&copy; 2026 Dayway. All rights reserved.</p>
-                    <p>Designed emphasizing Premium, Dark, Tech values.</p>
+                    <p>Designed emphasizing Premium, Dark, Tech values. (v1.1.3)</p>
                 </div>
             </div>
         </footer>
