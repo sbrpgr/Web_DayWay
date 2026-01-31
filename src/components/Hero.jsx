@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './Hero.module.css';
 import ParticleBackground from './ParticleBackground';
 
+import logo from '../assets/dayway_logo.png';
+
 const Hero = () => {
     return (
         <section className={styles.hero}>
@@ -16,6 +18,9 @@ const Hero = () => {
                         데이웨이는 <b>기술과 사람</b>, 그리고 <b>비즈니스</b>를 데이터로 연결합니다.<br />
                         <span className="energy-line">R&D, 교육, 플랫폼, 디자인의 유기적 결합을 통해 최적의 가치를 창출합니다.</span>
                     </p>
+                </div>
+                <div className={styles.logoContainer}>
+                    <img src={logo} alt="DayWay Logo" className={styles.logo} />
                 </div>
             </div>
         </section>
