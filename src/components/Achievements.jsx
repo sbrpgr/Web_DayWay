@@ -71,7 +71,7 @@ const Achievements = () => {
                 <div className={styles.list}>
                     {awards[activeTab].map((award, index) => (
                         <div key={index} className={styles.item}>
-                            <div className={styles.rankBadge}>
+                            <div className={`${styles.rankBadge} emoji-align`}>
                                 {award.title.includes('대상') || award.title.includes('장관상') ? '🏆' : '🏅'}
                             </div>
                             <div className={styles.info}>

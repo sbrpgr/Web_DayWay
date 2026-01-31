@@ -5,44 +5,41 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    color: #fff;
-    /* White text on dark fluid background */
+    color: var(--text-primary);
 }
 
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 var(--space-4);
     width: 100%;
     z-index: 2;
-    /* Above particles */
 }
 
 .content {
-    border-left: 4px solid var(--accent-primary);
-    /* Accent color anchor */
-    padding-left: 3rem;
-    backdrop-filter: blur(5px);
-    /* Subtle glass effect */
+    border-left: 2px solid var(--accent-primary);
+    padding-left: var(--space-6);
+    backdrop-filter: blur(8px);
+    border-radius: var(--border-radius-sm);
 }
 
 .companyName {
-    font-size: 1.2rem;
-    letter-spacing: 0.8rem;
-    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.6em;
+    font-weight: 800;
     color: var(--accent-primary);
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-3);
     text-transform: uppercase;
 }
 
 .title {
-    font-size: 5.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 2rem;
-    letter-spacing: -2px;
-    text-shadow: 0 0 20px rgba(76, 201, 240, 0.3);
-    color: #fff;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.04em;
+    text-shadow: 0 0 30px rgba(76, 201, 240, 0.2);
+    color: var(--text-primary);
 }
 
 @keyframes slideInX {
@@ -85,10 +82,10 @@
 }
 
 .subtitle {
-    font-size: 1.25rem;
-    color: #cbd5e1;
-    line-height: 1.8;
-    max-width: 800px;
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 750px;
     font-weight: 400;
     animation: slideInY 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     animation-delay: 0.8s;

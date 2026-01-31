@@ -1,5 +1,5 @@
 .achievements {
-    padding: 8rem 2rem;
+    padding: var(--space-12) var(--space-4);
     background: var(--bg-secondary);
 }
 
@@ -10,13 +10,15 @@
 
 .header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: var(--space-8);
 }
 
 .title {
-    font-size: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
     color: var(--text-primary);
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.04em;
 }
 
 .subtitle {
@@ -26,31 +28,29 @@
 .tabs {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
     flex-wrap: wrap;
 }
 
 .tab {
-    padding: 0.8rem 1.5rem;
-    background: transparent;
+    padding: var(--space-2) var(--space-4);
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--text-secondary);
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-}
-
-.tab:hover {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-primary);
+    border-radius: 40px;
+    transition: var(--transition-smooth);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .tab.active {
     background: var(--accent-secondary);
-    color: white;
+    color: #fff;
     border-color: var(--accent-secondary);
-    box-shadow: 0 0 15px rgba(114, 9, 183, 0.4);
+    box-shadow: 0 4px 15px rgba(114, 9, 183, 0.3);
 }
 
 .list {
@@ -62,31 +62,34 @@
 
 .item {
     background: var(--bg-tertiary);
-    padding: 1.5rem;
-    border-radius: 12px;
+    padding: var(--space-4);
+    border-radius: var(--border-radius);
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    transition: transform 0.2s ease;
-    border-left: 3px solid transparent;
+    gap: var(--space-4);
+    transition: var(--transition-smooth);
+    border-left: 2px solid transparent;
+    box-shadow: var(--shadow-soft);
 }
 
 .item:hover {
-    transform: translateX(5px);
-    background: lighten(var(--bg-tertiary), 5%);
+    transform: translateX(8px);
+    background: var(--bg-secondary);
     border-left-color: var(--accent-primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .rankBadge {
-    font-size: 2rem;
-    padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.05);
+    font-size: 1.75rem;
+    padding: var(--space-2);
+    background: rgba(255, 255, 255, 0.03);
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .info {
@@ -94,9 +97,11 @@
 }
 
 .awardTitle {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    font-weight: 800;
     color: var(--text-primary);
-    margin-bottom: 0.3rem;
+    margin-bottom: var(--space-1);
+    letter-spacing: -0.01em;
 }
 
 .issuer {
@@ -110,8 +115,10 @@
 }
 
 .desc {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--text-secondary);
+    line-height: 1.5;
+    font-weight: 400;
 }
 
 .patent {

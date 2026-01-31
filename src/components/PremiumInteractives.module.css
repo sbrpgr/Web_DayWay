@@ -1,6 +1,6 @@
 .container {
-    padding: 100px 0;
-    background: linear-gradient(180deg, #0a0e17 0%, #0f1520 50%, #0a0e17 100%);
+    padding: var(--space-12) 0;
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
     position: relative;
     overflow: hidden;
 }
@@ -17,18 +17,19 @@
 
 .header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: var(--space-8);
     position: relative;
 }
 
 .title {
-    font-size: 2.8rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 12px;
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.04em;
 }
 
 .subtitle {
@@ -39,35 +40,45 @@
 .nav {
     display: flex;
     justify-content: center;
-    gap: 12px;
-    margin-bottom: 50px;
-    flex-wrap: wrap;
-    padding: 0 20px;
+    gap: var(--space-2);
+    margin-bottom: var(--space-8);
+    flex-wrap: nowrap;
+    /* Enforce single row */
+    padding: 0 var(--space-2);
+    width: 100%;
 }
 
 .navBtn {
-    padding: 18px 24px;
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
+    flex: 1;
+    /* Equal width for all buttons */
+    min-width: 0;
+    /* Allow shrinking if necessary */
+    padding: var(--space-4) var(--space-2);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-smooth);
     display: flex;
+    flex-direction: column;
+    /* Stack icon and text vertically for better fit in 1 row */
     align-items: center;
-    gap: 14px;
+    justify-content: center;
+    gap: var(--space-2);
     backdrop-filter: blur(12px);
+    text-align: center;
 }
 
 .navBtn:hover {
-    background: rgba(30, 41, 59, 0.9);
-    border-color: rgba(0, 242, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-primary);
     transform: translateY(-4px);
 }
 
 .navBtn.active {
-    background: rgba(0, 242, 255, 0.1);
-    border-color: rgba(0, 242, 255, 0.5);
-    box-shadow: 0 0 40px rgba(0, 242, 255, 0.15);
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    box-shadow: 0 4px 20px var(--accent-glow);
 }
 
 .navIcon {
@@ -77,31 +88,37 @@
 .navText {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    /* Center text visually */
     gap: 2px;
 }
 
 .navTitle {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #e2e8f0;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--text-primary);
 }
 
 .navBtn.active .navTitle {
-    color: #00f2ff;
+    color: var(--bg-primary);
 }
 
 .navSub {
-    font-size: 0.7rem;
-    color: #64748b;
+    font-size: 0.65rem;
+    color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.navBtn.active .navSub {
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .content {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 var(--space-4);
 }
 
 /* Common Elements */
@@ -1933,15 +1950,26 @@
 /* Responsive */
 @media (max-width: 768px) {
     .nav {
-        gap: 8px;
+        gap: var(--space-1);
     }
 
     .navBtn {
-        padding: 12px 16px;
+        padding: var(--space-3) var(--space-1);
     }
 
     .navText {
+        display: flex;
+        /* Keep text visible as requested */
+    }
+
+    .navTitle {
+        font-size: 0.75rem;
+        /* Slightly smaller for mobile */
+    }
+
+    .navSub {
         display: none;
+        /* Hide subtitle but keep main title for space */
     }
 
     .dashboard {
@@ -1949,7 +1977,7 @@
     }
 
     .trackLine {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
 
     .processSlot {

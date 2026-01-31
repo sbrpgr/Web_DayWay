@@ -1,30 +1,31 @@
 .cycleSection {
-    padding: 8rem 2rem;
+    padding: var(--space-12) var(--space-4);
     background: transparent;
-    /* Dark tech background for high contrast */
-    color: #fff;
+    color: var(--text-primary);
     text-align: center;
 }
 
 .title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.04em;
 }
 
 .subtitle {
-    color: #94a3b8;
-    max-width: 600px;
-    margin: 0 auto 5rem auto;
-    line-height: 1.8;
-    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin: 0 auto var(--space-8) auto;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    font-weight: 400;
 }
 
 .cycleContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: var(--space-4);
     flex-wrap: wrap;
 }
 
@@ -39,29 +40,33 @@
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid var(--accent-primary);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--accent-primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 800;
+    font-weight: 900;
     font-size: 1.25rem;
-    color: #fff;
-    backdrop-filter: blur(10px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--text-primary);
+    backdrop-filter: blur(12px);
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-soft);
 }
 
 .circle:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     background: var(--accent-primary);
     color: #fff;
+    box-shadow: 0 10px 40px var(--accent-glow);
 }
 
 .desc {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #cbd5e1;
-    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-top: var(--space-2);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .arrow {

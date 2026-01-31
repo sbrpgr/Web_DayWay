@@ -1,58 +1,64 @@
 .footer {
     background: transparent;
-    padding: 5rem 2rem 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--space-12) var(--space-4) var(--space-8);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 var(--space-4);
 }
 
 .top {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 4rem;
-    margin-bottom: 4rem;
+    gap: var(--space-8);
+    margin-bottom: var(--space-8);
 }
 
 .brand h2 {
-    font-size: 2rem;
-    color: white;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+    letter-spacing: 0.1em;
 }
 
 .brand p {
     color: var(--text-secondary);
+    font-size: 0.95rem;
 }
 
 .links {
     display: flex;
-    gap: 4rem;
+    gap: var(--space-12);
 }
 
 .group h3 {
     color: var(--accent-primary);
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
+    margin-bottom: var(--space-4);
+    font-size: 0.85rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.1em;
 }
 
 .group p {
     color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
+    margin-bottom: var(--space-1);
+    font-size: 0.9rem;
+    font-weight: 400;
 }
 
 .bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 2rem;
+    padding-top: var(--space-4);
     display: flex;
     justify-content: space-between;
-    color: #555;
-    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-size: 0.8rem;
 }
 
 @media (max-width: 768px) {

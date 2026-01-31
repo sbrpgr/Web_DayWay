@@ -26,7 +26,7 @@ const PremiumInteractives = () => {
                         className={`${styles.navBtn} ${activeSection === idx ? styles.active : ''}`}
                         onClick={() => setActiveSection(idx)}
                     >
-                        <span className={styles.navIcon}>{sec.icon}</span>
+                        <span className={`${styles.navIcon} emoji-align`}>{sec.icon}</span>
                         <div className={styles.navText}>
                             <span className={styles.navTitle}>{sec.title}</span>
                             <span className={styles.navSub}>{sec.subtitle}</span>
@@ -410,7 +410,7 @@ const BlueprintOfStandards = () => {
                             className={`${styles.inventoryItem} ${selectedModule?.id === m.id ? styles.selectedItem : ''}`}
                             onClick={() => handleModuleClick(m)}
                         >
-                            <span className={styles.itemIcon}>{m.icon}</span>
+                            <span className={`${styles.itemIcon} emoji-align`}>{m.icon}</span>
                             <span className={styles.itemName}>{m.desc}</span>
                         </div>
                     ))}
@@ -438,7 +438,7 @@ const BlueprintOfStandards = () => {
                         >
                             {slot ? (
                                 <div className={styles.slotFilled}>
-                                    <span className={styles.slotIcon}>{slot.icon}</span>
+                                    <span className={`${styles.slotIcon} emoji-align`}>{slot.icon}</span>
                                     <span className={styles.slotName}>{slot.desc}</span>
                                     {!running && <span className={styles.removeHint}>클릭하여 해제</span>}
                                 </div>
@@ -554,7 +554,7 @@ const CurriculumGalaxy = () => {
                         onClick={() => toggleHub(hub.id)}
                     >
                         <div className={styles.hubCore}>
-                            <span className={styles.hubIcon}>{hub.icon}</span>
+                            <span className={`${styles.hubIcon} emoji-align`}>{hub.icon}</span>
                         </div>
                         <span className={styles.hubName}>{hub.name}</span>
 
@@ -630,7 +630,7 @@ const CapabilityInventory = () => {
                         onClick={() => setSelectedProduct(selectedProduct === product.id ? null : product.id)}
                     >
                         <div className={styles.cardGlass}>
-                            <span className={styles.productIcon}>{product.icon}</span>
+                            <span className={`${styles.productIcon} emoji-align`}>{product.icon}</span>
                             <h5 className={styles.productName}>{product.name}</h5>
 
                             <div className={styles.productItems}>
