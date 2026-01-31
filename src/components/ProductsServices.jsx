@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './ProductsServices.module.css';
+import PremiumInteractives from './PremiumInteractives';
 
 const ProductsServices = () => {
     const sectors = [
@@ -92,6 +93,10 @@ const ProductsServices = () => {
                             </ul>
                         </div>
                     ))}
+                </div>
+
+                <div className={styles.gameSection}>
+                    <PremiumInteractives />
                 </div>
             </div>
         </section>

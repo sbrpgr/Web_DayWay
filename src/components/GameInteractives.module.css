@@ -1,0 +1,644 @@
+.container {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #020617 0%, #0a0f1a 50%, #020617 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 30% 20%, rgba(0, 242, 255, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #64748b;
+    font-size: 1rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.navBtn {
+    padding: 16px 28px;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    backdrop-filter: blur(12px);
+}
+
+.navBtn:hover {
+    background: rgba(30, 41, 59, 0.9);
+    border-color: rgba(0, 242, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.navBtn.active {
+    background: rgba(0, 242, 255, 0.1);
+    border-color: rgba(0, 242, 255, 0.5);
+    box-shadow: 0 0 40px rgba(0, 242, 255, 0.2);
+}
+
+.navTitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #e2e8f0;
+}
+
+.navBtn.active .navTitle {
+    color: #00f2ff;
+}
+
+.navSub {
+    font-size: 0.7rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.gameArea {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gameWrapper {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 24px;
+    padding: 40px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.gameInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.scoreLabel {
+    color: #94a3b8;
+    font-size: 1rem;
+}
+
+.scoreLabel strong {
+    color: #00f2ff;
+    font-size: 1.5rem;
+}
+
+.resetBtn {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.resetBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.hint {
+    text-align: center;
+    color: #475569;
+    font-size: 0.75rem;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.gameActions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* ========== 2048 Game ========== */
+.grid2048 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 16px;
+    background: #0a0f1a;
+    border-radius: 16px;
+    touch-action: none;
+}
+
+.cell2048 {
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.tile2048 {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    animation: tileAppear 0.2s ease-out;
+    transition: all 0.15s;
+}
+
+.level0 {
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+}
+
+.level1 {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+}
+
+.level2 {
+    background: linear-gradient(135deg, #059669, #10b981);
+}
+
+.level3 {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.5);
+}
+
+.tileIcon {
+    font-size: 2rem;
+}
+
+.tileLabel {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+@keyframes tileAppear {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.victoryMessage {
+    margin-top: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(245, 158, 11, 0.1));
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 12px;
+    color: #fbbf24;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* ========== Circuit Connect ========== */
+.circuitBoard {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    background: #0a0f1a;
+    border-radius: 16px;
+    position: relative;
+}
+
+.circuitStart,
+.circuitEnd {
+    padding: 12px 20px;
+    background: rgba(0, 242, 255, 0.1);
+    border: 2px solid #00f2ff;
+    border-radius: 8px;
+    color: #00f2ff;
+    font-weight: 800;
+    font-size: 0.75rem;
+}
+
+.circuitPipes {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+    justify-content: center;
+}
+
+.pipeModule {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pipeModule:hover {
+    border-color: rgba(0, 242, 255, 0.5);
+    transform: scale(1.05);
+}
+
+.pipeModule.aligned {
+    border-color: #00f2ff;
+    background: rgba(0, 242, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+}
+
+.pipeIcon {
+    font-size: 1.5rem;
+}
+
+.pipeLabel {
+    font-size: 0.6rem;
+    color: #94a3b8;
+    margin-top: 6px;
+    text-align: center;
+}
+
+.circuitLine {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    height: 4px;
+    background: linear-gradient(90deg, #00f2ff, #a855f7);
+    border-radius: 2px;
+    z-index: 0;
+    transition: width 1s ease-out;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+}
+
+.successMessage {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(0, 242, 255, 0.05);
+    border-left: 4px solid #00f2ff;
+    border-radius: 8px;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+/* ========== Needs Tree ========== */
+.treePath {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: #475569;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.pathNode {
+    color: #64748b;
+}
+
+.treeCard {
+    background: #0a0f1a;
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+}
+
+.treeQuestion {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.treeOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.treeOption {
+    padding: 18px 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #e2e8f0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+}
+
+.treeOption:hover {
+    background: rgba(0, 242, 255, 0.1);
+    border-color: rgba(0, 242, 255, 0.5);
+    transform: translateX(8px);
+}
+
+.resultCard {
+    padding: 20px;
+}
+
+.resultIcon {
+    font-size: 4rem;
+    margin-bottom: 16px;
+}
+
+.resultTitle {
+    font-size: 1.3rem;
+    color: #00f2ff;
+    margin-bottom: 12px;
+}
+
+.resultDesc {
+    color: #94a3b8;
+    margin-bottom: 24px;
+}
+
+.resultMessage {
+    padding: 16px;
+    background: rgba(0, 242, 255, 0.05);
+    border-radius: 8px;
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* ========== Synapse Match ========== */
+.searchBox {
+    margin-bottom: 24px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 16px 24px;
+    background: #0a0f1a;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.searchInput:focus {
+    border-color: #00f2ff;
+}
+
+.searchInput::placeholder {
+    color: #475569;
+}
+
+.synapseField {
+    position: relative;
+    height: 300px;
+    background: #0a0f1a;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.synapseSvg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.synapseLine {
+    stroke: url(#synapseGradient);
+    stroke: #00f2ff;
+    stroke-width: 3;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.6));
+    animation: pulseLine 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseLine {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.synapseNode {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.nodeGlow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(100, 116, 139, 0.2);
+    border: 2px solid rgba(100, 116, 139, 0.3);
+    transition: all 0.3s;
+}
+
+.synapseNode.nodeActive .nodeGlow {
+    background: rgba(0, 242, 255, 0.2);
+    border-color: #00f2ff;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.5);
+    animation: nodeGlowPulse 1s ease-in-out infinite;
+}
+
+@keyframes nodeGlowPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.nodeLabel {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.synapseNode.nodeActive .nodeLabel {
+    color: #00f2ff;
+}
+
+.synapseMessage {
+    margin-top: 20px;
+    padding: 16px;
+    background: rgba(0, 242, 255, 0.05);
+    border-left: 4px solid #00f2ff;
+    border-radius: 8px;
+    color: #e2e8f0;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+/* ========== Poly-Art Jigsaw ========== */
+.puzzleArea {
+    position: relative;
+    height: 350px;
+    background: #0a0f1a;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.puzzleTarget {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    border: 2px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+}
+
+.puzzlePiece {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    transition: box-shadow 0.2s;
+    z-index: 10;
+}
+
+.puzzlePiece:not(.placed):hover {
+    box-shadow: 0 0 30px currentColor;
+}
+
+.puzzlePiece.placed {
+    box-shadow: 0 0 20px currentColor;
+    z-index: 5;
+}
+
+.puzzleComplete {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease-out;
+    padding: 40px;
+    text-align: center;
+}
+
+.completeArt {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.puzzleComplete p {
+    color: #e2e8f0;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 400px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        gap: 8px;
+    }
+
+    .navBtn {
+        padding: 12px 18px;
+    }
+
+    .gameWrapper {
+        padding: 24px;
+    }
+
+    .grid2048 {
+        gap: 8px;
+    }
+
+    .tileIcon {
+        font-size: 1.5rem;
+    }
+
+    .circuitPipes {
+        flex-wrap: wrap;
+    }
+
+    .pipeModule {
+        width: 60px;
+        height: 60px;
+    }
+}
