@@ -5,19 +5,19 @@ export const portfolioData = {
         projects: [
             {
                 text: "제9회 전국동시지방선거 (지방자치단체장 후보) - 데이터 기반 분석, 선거 전략 수립 및 기획",
-                image: "strategy-korea.png"
+                image: "portfolio/01_Tech-GPT_과제스코어링플랫폼.png"
             },
             {
                 text: "[국회입법조사처] 2025년도 입법 및 정책 제안대회(교통약자 배려를 위한 자가용 유상운수체계 개선안) - 우수제안상",
-                image: "platform-bg.png"
+                image: "portfolio/02_AI스토킹탐지플랫폼.png"
             },
             {
                 text: "[인구보건복지협회] 제2회 국회 인구 포럼 대한민국 인구 페스티벌 정책분야(AI 및 데이터 기반 맞춤형 인구전략 수립 방안) - 우수상",
-                image: "complex-data-viz.png"
+                image: "portfolio/03_군수품단가이상치탐지플랫폼.png"
             },
             {
                 text: "[대한전기협회/한국전력] 전기에너지 국민 아이디어 공모(DC 기반 전력 거래 전용 요금 기획안) - 우수상",
-                image: "cert_electric.jpg"
+                image: "portfolio/04_AI과제매칭플랫폼.png"
             }
         ]
     },
@@ -27,31 +27,31 @@ export const portfolioData = {
         projects: [
             {
                 text: "[산자부/KEA] 제 1회 Tech-GPT 서비스 경진대회(Tech-GPT 기반 과제 스코어링 플랫폼) - 최우수상",
-                image: "complex-data-viz.png"
+                image: "portfolio/01_Tech-GPT_과제스코어링플랫폼.png"
             },
             {
                 text: "[과기부/경찰청] 11회 과학치안 아이디어 공모전(AI 및 데이터 기반스토킹 탐지 및 평가 플랫폼) - 우수상",
-                image: "dashboard-ui.png"
+                image: "portfolio/02_AI스토킹탐지플랫폼.png"
             },
             {
                 text: "[국방부/병무청·방사청·질병청] 합동 데이터 공모전(군수품 단가 이상치 탐지 레이더) - 최우수상",
-                image: "real-radar.png"
+                image: "portfolio/03_군수품단가이상치탐지플랫폼.png"
             },
             {
                 text: "[중소기업기술정보진흥원] 2025년 대국민 혁신아이디어 공모전(AI 기반 과제 매칭 플랫폼) - 대상",
-                image: "platform-bg.png"
+                image: "portfolio/04_AI과제매칭플랫폼.png"
             },
             {
                 text: "[한국산업기술기획평가원] AI 라이프 아이디어 챌린지 (샌드박스 기반 디지털 범죄 방어 AI 시스템) - 우수상",
-                image: "rnd-korea.png"
+                image: "portfolio/05_샌드박스디지털범죄방어시스템.png"
             },
             {
                 text: "[여수광양항만공사] 여수광양항 AI 혁신제안 대국민 공모(항만-화물차주 상생을 위한 AI 기반 물동량 예측 플랫폼)- 우수상",
-                image: "rnd-korea.png"
+                image: "portfolio/06_항만물동량예측플랫폼.png"
             },
             {
                 text: "디지털 취약 계층의 사기 피해 방지를 위한 실시간 다중 분석 AI 에이전트 기반 모바일 방어 시스템(10-2025-0172530)",
-                image: "rnd-korea.png"
+                image: "portfolio/07_디지털취약계층모바일방어시스템.png"
             }
         ]
     },
@@ -61,19 +61,19 @@ export const portfolioData = {
         projects: [
             {
                 text: "(주)이스트소프트 x 광주 인공지능사관학교 (6기)",
-                image: "project-ai-class.png"
+                image: "portfolio/08_이스트소프트_광주AI사관학교교육.png"
             },
             {
                 text: "중소기업 AX/DX 진단 및 솔루션 도입 컨설팅 교육",
-                image: "education-bg.png"
+                image: "portfolio/09_중소기업AXDX컨설팅교육.png"
             },
             {
                 text: "한국과학창의재단 찾아가는 학교연수 / 디지털새싹 사업",
-                image: "edu-korea.png"
+                image: "portfolio/10_한국과학창의재단_디지털새싹사업.png"
             },
             {
                 text: "공공기관/중소기업 대상 AI 및 자동화 솔루션 활용 교육",
-                image: "edu-korea.png"
+                image: "portfolio/11_공공기관중소기업AI자동화교육.png"
             }
         ]
     },
@@ -83,11 +83,11 @@ export const portfolioData = {
         projects: [
             {
                 text: "광주광역시 동구 - 'AI 챗봇 기반의 리서치 솔루션' 개발 계약",
-                image: "platform-bg.png"
+                image: "portfolio/12_AI챗봇리서치솔루션.png"
             },
             {
                 text: "기업 및 기관 AX 전환 진단 및 컨설팅 솔루션 개발",
-                image: "complex-data-viz.png"
+                image: "portfolio/13_기업AX전환컨설팅솔루션.png"
             }
         ]
     },
@@ -97,19 +97,19 @@ export const portfolioData = {
         projects: [
             {
                 text: "[국토부/한국도로공사] 14회 도로 경관디자인 대전(AI 및 고휘도 LED 기반 기상 위험 경고 아트라이트 경고등) - 최우수상",
-                image: "safelight-bg.png"
+                image: "portfolio/14_기상위험경고아트라이트.png"
             },
             {
                 text: "[통일부] 2025년 통일문화 콘텐츠 공모전(슬로건) - 통일부장관상",
-                image: "safelight-bg.png"
+                image: "portfolio/15_로컬아티스트아트LED오브제.png"
             },
             {
                 text: "[광주디자인진흥원] 2025년 광주방문의해 관광 상품 공모전(로컬 아티스트 매칭 아트 오브제) - 동상",
-                image: "project-tourism-goods.png"
+                image: "portfolio/15_로컬아티스트아트LED오브제.png"
             },
             {
                 text: "[전남관광재단] 2025년 전라남도 섬·해양 관광 콘텐츠 발굴 공모전(여수 LED 굿즈) - 장려상",
-                image: "project-tourism-goods.png"
+                image: "portfolio/16_여수LED굿즈.png"
             }
         ]
     }

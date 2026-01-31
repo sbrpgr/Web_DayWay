@@ -10,8 +10,8 @@
 
 .slide {
     width: 100%;
-    height: 450px;
-    /* Slightly taller for docs */
+    aspect-ratio: 16 / 9;
+    /* 16:9 aspect ratio */
     position: relative;
 }
 

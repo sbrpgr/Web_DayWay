@@ -12,6 +12,9 @@ import './App.css';
 
 function App() {
   useEffect(() => {
+    // Scroll to top on page load
+    window.scrollTo(0, 0);
+
     const observerOptions = {
       root: null,
       rootMargin: '0px',

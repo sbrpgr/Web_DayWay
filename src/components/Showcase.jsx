@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Showcase.module.css';
-import rndBg from '../assets/rnd-bg.png';
+import portfolio01 from '../assets/portfolio/01_Tech-GPT_과제스코어링플랫폼.png';
 
 const Showcase = () => {
     return (
@@ -40,7 +40,7 @@ const Showcase = () => {
                 </div>
                 <div className={styles.visualContent}>
                     <div className={styles.visualWrapper}>
-                        <img src={rndBg} alt="Road Analysis HUD" className={styles.rndImage} />
+                        <img src={portfolio01} alt="Road Analysis HUD" className={styles.rndImage} />
                         <div className={styles.hudOverlay}></div>
                     </div>
                 </div>
