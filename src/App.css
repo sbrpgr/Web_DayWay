@@ -3,4 +3,47 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+/* Floating Chat Trigger */
+.chat-trigger {
+  position: fixed;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  background: var(--accent-primary);
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  padding: var(--space-2) var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: none;
+  z-index: 900;
+  box-shadow: 0 5px 20px var(--accent-glow);
+  transition: var(--transition-smooth);
+}
+
+.chat-trigger:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.chat-label {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 768px) {
+  .chat-trigger {
+    bottom: var(--space-3);
+    right: var(--space-3);
+    padding: var(--space-2);
+  }
+
+  .chat-label {
+    display: none;
+  }
 }

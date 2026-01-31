@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -8,12 +8,17 @@ import Capabilities from './components/Capabilities';
 import Footer from './components/Footer';
 import ParticleBackground from './components/ParticleBackground';
 import CustomCursor from './components/CustomCursor';
+import ChatSidebar from './components/ChatSidebar';
 import './App.css';
 
 function App() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
   useEffect(() => {
     // Scroll to top on page load
     window.scrollTo(0, 0);
+
+    // ... rest of the intersection observer logic (omitted for brevity in replacement chunk)
 
     const observerOptions = {
       root: null,
@@ -64,6 +69,17 @@ function App() {
         <Capabilities />
       </main>
       <Footer />
+
+      {/* AI Chat Sidebar */}
+      <ChatSidebar isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
+
+      {/* Floating Chat Trigger */}
+      {!isChatOpen && (
+        <button className="chat-trigger" onClick={() => setIsChatOpen(true)}>
+          <span className="emoji-align">🤖</span>
+          <span className="chat-label">Ask DayWay</span>
+        </button>
+      )}
     </div>
   );
 }
