@@ -2,7 +2,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // User's API Key from .env
-const apiKey = "AIzaSyB3CDvQVU7OWaL89ewKfuC9caGM3aW57qo";
+// User's API Key from .env
+const apiKey = process.env.VITE_GEMINI_API_KEY || "YOUR_API_KEY_HERE";
 const genAI = new GoogleGenerativeAI(apiKey);
 
 async function run() {
