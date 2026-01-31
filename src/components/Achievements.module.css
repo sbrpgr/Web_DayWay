@@ -1,0 +1,149 @@
+.achievements {
+    padding: 8rem 2rem;
+    background: var(--bg-secondary);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: 3rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.tab {
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.tab:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.tab.active {
+    background: var(--accent-secondary);
+    color: white;
+    border-color: var(--accent-secondary);
+    box-shadow: 0 0 15px rgba(114, 9, 183, 0.4);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-height: 400px;
+}
+
+.item {
+    background: var(--bg-tertiary);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.item:hover {
+    transform: translateX(5px);
+    background: lighten(var(--bg-tertiary), 5%);
+    border-left-color: var(--accent-primary);
+}
+
+.rankBadge {
+    font-size: 2rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info {
+    flex: 1;
+}
+
+.awardTitle {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+}
+
+.issuer {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--accent-primary);
+    background: rgba(76, 201, 240, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.patent {
+    margin-top: 5rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.patent h3 {
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.patentItem {
+    background: linear-gradient(90deg, rgba(10, 10, 15, 0) 0%, rgba(114, 9, 183, 0.1) 50%, rgba(10, 10, 15, 0) 100%);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.patentItem strong {
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: var(--accent-primary);
+}
+
+.patentItem span {
+    color: var(--text-primary);
+}

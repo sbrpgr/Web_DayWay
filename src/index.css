@@ -1,0 +1,234 @@
+:root {
+  /* Brand Colors - Dark Premium Tech Theme */
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-tertiary: #1a1a24;
+
+  --text-primary: #f0f0f0;
+  --text-secondary: #a0a0b0;
+  --text-accent: #646cff;
+  /* Neon Purple-ish Blue */
+
+  --accent-primary: #4cc9f0;
+  /* Cyan Neon */
+  --accent-secondary: #7209b7;
+  /* Deep Purple */
+  --accent-glow: rgba(76, 201, 240, 0.5);
+
+  --font-main: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  --spacing-section: 6rem;
+  --border-radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  cursor: none;
+}
+
+a,
+button,
+[role="button"],
+li {
+  cursor: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Scroll Animation Classes */
+.fade-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cybernetic Animations */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+.glitch-text {
+  transition: all 0.3s ease;
+}
+
+.glitch-text:hover {
+  animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+  text-shadow: 0.05em 0 0 rgba(76, 201, 240, 0.75),
+    -0.025em -0.05em 0 rgba(114, 9, 183, 0.75),
+    0.025em 0.05em 0 rgba(76, 201, 240, 0.75);
+  color: var(--accent-primary) !important;
+}
+
+@keyframes flicker {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  52% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 1;
+  }
+}
+
+.flicker {
+  animation: flicker 5s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.cyber-header {
+  position: relative;
+  display: inline-block;
+}
+
+.cyber-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-primary);
+  box-shadow: 0 0 15px var(--accent-primary);
+  animation: scanline 3s linear infinite;
+  opacity: 0.6;
+}
+
+.energy-line {
+  position: relative;
+  display: inline-block;
+}
+
+.energy-line::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--accent-primary);
+  box-shadow: 0 0 10px var(--accent-primary);
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.visible .energy-line::after,
+:global(.visible) .energy-line::after {
+  width: 100%;
+}
+
+@keyframes reveal-stream {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.reveal-item {
+  /* Default to visible to prevent permanent invisibility */
+  opacity: 1;
+}
+
+.visible .reveal-item,
+:global(.visible) .reveal-item {
+  /* Only animate if the parent is visible */
+  animation: reveal-stream 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

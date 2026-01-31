@@ -1,0 +1,61 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    color: #fff;
+    /* Default white on dark hero */
+}
+
+/* Intelligent color switching based on scroll position needs JS, 
+   but for now we use a solid background on scroll. */
+.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 3rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: #000;
+    /* Switch to black text on scroll */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    color: inherit;
+}
+
+.navLinks {
+    display: flex;
+    gap: 2.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    list-style: none;
+}
+
+.navLinks li {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.navLinks li:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+
+    .navLinks {
+        display: none;
+    }
+}

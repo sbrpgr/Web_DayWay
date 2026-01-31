@@ -1,0 +1,97 @@
+.portfolio {
+    padding: 100px 0;
+    background-color: #0c0c0c;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff 0%, #888 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #aaa;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.tab {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tab:hover {
+    border-color: var(--accent-primary, #007bff);
+    background: rgba(0, 123, 255, 0.1);
+}
+
+.tab.active {
+    background: var(--accent-primary, #007bff);
+    border-color: var(--accent-primary, #007bff);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.description h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--accent-primary, #007bff);
+}
+
+.description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.carouselWrapper {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .description {
+        text-align: center;
+    }
+}

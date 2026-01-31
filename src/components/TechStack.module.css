@@ -1,0 +1,160 @@
+.container {
+    padding: 6rem 0;
+    background: #f9f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+/* Deliverables Section */
+.deliverablesArea {
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.dCard {
+    background: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-primary);
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.dTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.dDesc {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.dDetail {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.4;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+    width: 100%;
+}
+
+/* Tech Stack Section */
+.stackArea {
+    background: #1a1a1a;
+    padding: 3rem;
+    border-radius: 16px;
+    color: #fff;
+}
+
+.stackTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--accent-primary);
+    padding-left: 1rem;
+}
+
+.stackGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.groupTitle {
+    color: #aaa;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.techTag {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s;
+}
+
+.techTag:hover {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: #fff;
+}
+
+@media (max-width: 1024px) {
+
+    .cardGrid,
+    .stackGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .cardGrid,
+    .stackGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .stackArea {
+        padding: 2rem 1.5rem;
+    }
+}

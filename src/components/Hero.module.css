@@ -1,0 +1,107 @@
+.hero {
+    height: 90vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+    /* White text on dark fluid background */
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    z-index: 2;
+    /* Above particles */
+}
+
+.content {
+    border-left: 4px solid var(--accent-primary);
+    /* Accent color anchor */
+    padding-left: 3rem;
+    backdrop-filter: blur(5px);
+    /* Subtle glass effect */
+}
+
+.companyName {
+    font-size: 1.2rem;
+    letter-spacing: 0.8rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 5.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    letter-spacing: -2px;
+    text-shadow: 0 0 20px rgba(76, 201, 240, 0.3);
+    color: #fff;
+}
+
+@keyframes slideInX {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.title span {
+    display: inline-block;
+    animation: slideInX 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.title span:nth-child(1) {
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.title span:nth-child(3) {
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+@keyframes slideInY {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    line-height: 1.8;
+    max-width: 800px;
+    font-weight: 400;
+    animation: slideInY 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.8s;
+    opacity: 0;
+}
+
+.subtitle b {
+    color: var(--accent-primary);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 3.5rem;
+    }
+}

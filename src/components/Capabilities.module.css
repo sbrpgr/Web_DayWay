@@ -1,0 +1,142 @@
+.capabilities {
+    padding: 6rem 0;
+    background: transparent;
+    color: #f0f0f0;
+}
+
+.container {
+    max-width: 1400px;
+    /* Wider container for impact */
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.mainTitle {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -2px;
+    margin-bottom: 5rem;
+    padding-bottom: 2rem;
+    border-bottom: 4px solid var(--accent-primary);
+}
+
+/* Vertical Layout Section */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    /* Reduced from 8rem */
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Reduced from 2rem */
+}
+
+.headerArea {
+    margin-bottom: 0.5rem;
+    /* Reduced from 1rem */
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    /* Reduced from 0.8rem */
+    color: #fff;
+}
+
+.competency {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    font-weight: 500;
+    line-height: 1.4;
+    /* Reduced from 1.6 */
+}
+
+/* Image Full Width or Centered Large */
+.imageArea {
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sliderContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.slideImage {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Content List below Image */
+.contentArea {
+    width: 100%;
+}
+
+.projectList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    /* Reduced from 0.8rem */
+}
+
+.projectItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-size: 1rem;
+    line-height: 1.3;
+    /* Reduced from 1.5 */
+    color: #e2e8f0;
+    padding: 0.4rem 0.5rem;
+    /* Reduced vertical padding */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.projectItem:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(5px);
+    border-left: 3px solid var(--accent-primary);
+    padding-left: 1rem;
+}
+
+.projectItem:last-child {
+    border-bottom: none;
+}
+
+.bullet {
+    font-weight: bold;
+    color: var(--accent-primary);
+    margin-top: 2px;
+    /* Visual alignment */
+}
+
+.projectText {
+    flex: 1;
+    word-break: keep-all;
+    /* Keep Korean words together */
+}
+
+@media (max-width: 768px) {
+    .imageArea {
+        height: 300px;
+    }
+
+    .mainTitle {
+        font-size: 2.5rem;
+    }
+}
